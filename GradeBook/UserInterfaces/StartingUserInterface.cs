@@ -19,9 +19,9 @@ namespace GradeBook.UserInterfaces
 
         public static void CommandRoute(string command)
         {
-            if (command.StartsWith("create", StringComparison.Ordinal))
+            if (command.StartsWith("create"))
                 CreateCommand(command);
-            else if (command.StartsWith("load", StringComparison.Ordinal))
+            else if (command.StartsWith("load"))
                 LoadCommand(command);
             else if (command == "help")
                 HelpCommand();
@@ -36,7 +36,7 @@ namespace GradeBook.UserInterfaces
             var parts = command.Split(' ');
             if (parts.Length != 4)
             {
-                Console.WriteLine("Command not valid, Create requires a name, type of gradebook if its weighted (true / false).");
+                Console.WriteLine("Command not valid, Create requires a name, type of gradebook, if its weighted (true / false).");
                 return;
             }
             var name = parts[1];
